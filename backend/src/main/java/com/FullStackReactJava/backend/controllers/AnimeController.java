@@ -9,6 +9,10 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class AnimeController {
 
+    @GetMapping("/")
+    public String home() {
+        return "Bienvenidxs a mi aplicación!";
+    }
     @GetMapping("/anime/{id}")
     public ResponseEntity<String> getAnime(@PathVariable String id) {
         RestTemplate restTemplate = new RestTemplate();
